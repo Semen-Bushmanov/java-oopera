@@ -5,13 +5,12 @@ public class Show {
     private String title;
     private int duration;
     private Director director;
-    private ArrayList<Actor> listOfActors;
+    private ArrayList<Actor> listOfActors = new ArrayList<>();
 
-    public Show(String title, int duration, Director director, ArrayList<Actor> listOfActors) {
+    public Show(String title, int duration, Director director) {
         this.title = title;
         this.duration = duration;
         this.director = director;
-        this.listOfActors = listOfActors;
     }
 
     public String getTitle() {
@@ -41,6 +40,7 @@ public class Show {
             listOfActors.add(actor);
             return actor;
         }
+        System.out.println("The actor exists already.");
         return null;
     }
 
@@ -50,6 +50,7 @@ public class Show {
             listOfActors.add(newActor);
             return newActor;
         }
+        System.out.println("There is no such actor.");
         return null;
     }
 }

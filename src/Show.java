@@ -36,20 +36,42 @@ public class Show {
     }
 
     public Actor addActor(Actor actor) {
-        if (!listOfActors.contains(actor)) {
+        boolean canAdd = true;
+
+        for (Actor actorInList : getListOfActors()) {
+            if (actorInList.equals(actor)) {
+                canAdd = false;
+                break;
+            }
+        }
+
+        if (canAdd) {
             listOfActors.add(actor);
+            System.out.println("The actor " + actor.toString() + " has been added.");
             return actor;
         }
+
         System.out.println("The actor exists already.");
         return null;
     }
 
     public Actor replaceActor(Actor oldActor, Actor newActor) {
-        if (!listOfActors.contains(oldActor)) {
+        boolean canReplace = false;
+
+        for (Actor actor : getListOfActors()) {
+            if (actor.equals(oldActor)) {
+                canReplace = true;
+                break;
+            }
+        }
+
+        if (canReplace) {
             listOfActors.remove(oldActor);
             listOfActors.add(newActor);
+            System.out.println("The actor " + oldActor.toString() + " is replaced by " + newActor.toString() + ".");
             return newActor;
         }
+
         System.out.println("There is no such actor.");
         return null;
     }

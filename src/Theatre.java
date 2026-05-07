@@ -27,7 +27,7 @@ public class Theatre {
         thirdShow.printListOfActors();
 
         firstShow.replaceActor(firstActor, secondActor);
-        secondShow.replaceActor(firstActor, unrealActor);
+        thirdShow.replaceActor(unrealActor, firstActor);
 
         secondShow.printLibretto();
         thirdShow.printLibretto();

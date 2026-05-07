@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Show {
     private String title;
@@ -27,5 +28,28 @@ public class Show {
 
     public ArrayList<Actor> getListOfActors() {
         return listOfActors;
+    }
+
+    public void printListOfActors() {
+        for (Actor actor : this.getListOfActors()) {
+            System.out.println(actor);
+        }
+    }
+
+    public Actor addActor(Actor actor) {
+        if (!listOfActors.contains(actor)) {
+            listOfActors.add(actor);
+            return actor;
+        }
+        return null;
+    }
+
+    public Actor replaceActor(Actor oldActor, Actor newActor) {
+        if (!listOfActors.contains(oldActor)) {
+            listOfActors.remove(oldActor);
+            listOfActors.add(newActor);
+            return newActor;
+        }
+        return null;
     }
 }

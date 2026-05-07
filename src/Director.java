@@ -9,4 +9,13 @@ public class Director extends Person {
     public int getNumberOfShows() {
         return numberOfShows;
     }
+
+    @Override
+    public String toString() {
+        return "Director{" +
+                "name='" + this.getName() +
+                "', surname='" + this.getSurname() +
+                "', gender='" + this.getGender() +
+                "', numberOfShows=" + this.getNumberOfShows() + "'" + "}";
+    }
 }
